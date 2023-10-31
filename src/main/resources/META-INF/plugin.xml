@@ -7,15 +7,6 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.plugins.go</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.kkkiio.gocopyqualifiedname.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.kkkiio.gocopyqualifiedname.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
     <actions>
         <action id="com.github.kkkiio.gocopyqualifiedname.actions.CopyQualifiedNameAction"
                 class="com.github.kkkiio.gocopyqualifiedname.actions.CopyQualifiedNameAction"
