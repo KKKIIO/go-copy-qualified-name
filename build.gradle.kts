@@ -16,14 +16,24 @@ plugins {
 group = properties("pluginGroup").get()
 version = properties("pluginVersion").get()
 
-// Configure project's dependencies
+// GoLand Test Framework: see https://github.com/JetBrains/gradle-intellij-plugin/issues/477#issuecomment-845022914
 repositories {
     mavenCentral()
+    maven("https://www.jetbrains.com/intellij-repository/releases")
+    maven("https://cache-redirector.jetbrains.com/intellij-dependencies")
+    maven("https://cache-redirector.jetbrains.com/download.jetbrains.com/teamcity-repository")
+    maven("https://cache-redirector.jetbrains.com/packages.jetbrains.team/maven/p/grazi/grazie-platform-public")
+    maven("https://cache-redirector.jetbrains.com/maven.pkg.jetbrains.space/public/p/ktor/eap")
+    maven("https://cache-redirector.jetbrains.com/download-pgp-verifier")
 }
-
-// Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
-//    implementation(libs.annotations)
+    testImplementation("com.jetbrains.intellij.go:go-test-framework:232.10203.20") {
+        exclude("org.jetbrains.kotlin", "kotlin-stdlib-jdk8")
+        exclude("org.jetbrains.kotlin", "kotlin-reflect")
+        exclude("com.jetbrains.rd", "rd-core")
+        exclude("com.jetbrains.rd", "rd-swing")
+        exclude("com.jetbrains.rd", "rd-framework")
+    }
 }
 
 // Set the JVM language level used to build the project. Use Java 11 for 2020.3+, and Java 17 for 2022.2+.
@@ -103,6 +113,10 @@ tasks {
                 )
             }
         }
+    }
+
+    withType<Test> {
+        systemProperty("idea.home.path", "${layout.buildDirectory.get()}/idea-sandbox/")
     }
 
     // Configure UI tests plugin

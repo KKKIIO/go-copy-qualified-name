@@ -1,10 +1,11 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.kkkiio.gocopyqualifiedname</id>
-    <name>go-copy-qualified-name Template</name>
+    <name>Go Copy Qualified Name</name>
     <vendor>kkkiio</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.go</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
@@ -15,4 +16,12 @@
     <applicationListeners>
         <listener class="com.github.kkkiio.gocopyqualifiedname.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+    <actions>
+        <action id="com.github.kkkiio.gocopyqualifiedname.actions.CopyQualifiedNameAction"
+                class="com.github.kkkiio.gocopyqualifiedname.actions.CopyQualifiedNameAction"
+                text="Copy Qualified Name"
+                description="Copy the qualified name of the function or global variable under the cursor">
+            <add-to-group group-id="CopyReferencePopupGroup" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
