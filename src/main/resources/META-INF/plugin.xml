@@ -11,8 +11,9 @@
         <action id="com.github.kkkiio.gocopyqualifiedname.actions.CopyQualifiedNameAction"
                 class="com.github.kkkiio.gocopyqualifiedname.actions.CopyQualifiedNameAction"
                 text="Copy Qualified Name"
-                description="Copy the qualified name of the function or global variable under the cursor">
+                description="Copy the qualified name of the function or global variable under the caret">
             <add-to-group group-id="CopyReferencePopupGroup" anchor="last"/>
+            <add-to-group group-id="Copy.Paste.Special" anchor="last"/>
         </action>
     </actions>
 </idea-plugin>
