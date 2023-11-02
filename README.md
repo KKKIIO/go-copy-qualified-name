@@ -1,8 +1,8 @@
 # go-copy-qualified-name
 
 ![Build](https://github.com/KKKIIO/go-copy-qualified-name/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/com.github.kkkiio.gocopyqualifiedname.svg)](https://plugins.jetbrains.com/plugin/com.github.kkkiio.gocopyqualifiedname)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/com.github.kkkiio.gocopyqualifiedname.svg)](https://plugins.jetbrains.com/plugin/com.github.kkkiio.gocopyqualifiedname)
+[![Version](https://img.shields.io/jetbrains/plugin/v/com.github.kkkiio.gocopyqualifiedname.svg)](https://plugins.jetbrains.com/plugin/23044-go-copy-qualified-name)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/com.github.kkkiio.gocopyqualifiedname.svg)](https://plugins.jetbrains.com/plugin/23044-go-copy-qualified-name)
 
 <!-- Plugin description -->
 Add a "Copy Qualified Name" action for Goland.
