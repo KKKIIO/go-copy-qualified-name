@@ -27,7 +27,7 @@ repositories {
     maven("https://cache-redirector.jetbrains.com/download-pgp-verifier")
 }
 dependencies {
-    testImplementation("com.jetbrains.intellij.go:go-test-framework:232.10203.20") {
+    testImplementation("com.jetbrains.intellij.go:go-test-framework:232.10227.11") {
         exclude("org.jetbrains.kotlin", "kotlin-stdlib-jdk8")
         exclude("org.jetbrains.kotlin", "kotlin-reflect")
         exclude("com.jetbrains.rd", "rd-core")
