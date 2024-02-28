@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/com.github.kkkiio.gocopyqualifiedname.svg)](https://plugins.jetbrains.com/plugin/23044-go-copy-qualified-name)
 
 <!-- Plugin description -->
-Add a "Copy Qualified Name" action for Goland.
+Allow copying or go to the qualified name of the function, variable or type in the Go file.
 <!-- Plugin description end -->
 
 ## Installation
