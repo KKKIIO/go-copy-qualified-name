@@ -35,12 +35,16 @@ class CopyQualifiedNameAction : AnAction() {
         // as go reference expression
         val goNamedElement = psiElement.parentOfType<GoNamedElement>(withSelf = true) ?: return
         logger.debug { "goNamedElement=${goNamedElement.debugs()}" }
-        // get qualified name
-        val importPath = GoUtil.getImportPath(goNamedElement, goNamedElement) ?: return
-        val qualifiedName = "$importPath.${goNamedElement.name}"
+        val qualifiedName = getFqn(goNamedElement)
         // set clipboard
         CopyPasteManager.getInstance().setContents(StringSelection(qualifiedName))
     }
 }
+
+public fun getFqn(goNamedElement: GoNamedElement): String? {
+    val importPath = GoUtil.getImportPath(goNamedElement, goNamedElement) ?: return null
+    return "$importPath.${goNamedElement.name}"
+}
+
 fun String.quoteKt() = StringUtil.wrapWithDoubleQuote(StringUtil.escapeStringCharacters(this))
 fun PsiElement.debugs() = "{text=${text.quoteKt()}, elementType=$elementType, class=${javaClass}}"
