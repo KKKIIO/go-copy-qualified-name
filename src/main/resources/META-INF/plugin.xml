@@ -19,6 +19,6 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <gotoSymbolContributor
-                implementation="com.github.kkkiio.gocopyqualifiedname.navigation.ChooseByQualifiedNameContributor"/>
+                implementation="com.github.kkkiio.gocopyqualifiedname.navigation.FqnContributor"/>
     </extensions>
 </idea-plugin>

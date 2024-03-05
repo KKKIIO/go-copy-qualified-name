@@ -41,7 +41,7 @@ class CopyQualifiedNameAction : AnAction() {
     }
 }
 
-public fun getFqn(goNamedElement: GoNamedElement): String? {
+fun getFqn(goNamedElement: GoNamedElement): String? {
     val importPath = GoUtil.getImportPath(goNamedElement, goNamedElement) ?: return null
     return "$importPath.${goNamedElement.name}"
 }
