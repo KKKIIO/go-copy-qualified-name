@@ -16,4 +16,9 @@
             <add-to-group group-id="Copy.Paste.Special" anchor="last"/>
         </action>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <gotoSymbolContributor
+                implementation="com.github.kkkiio.gocopyqualifiedname.navigation.FqnContributor"/>
+    </extensions>
 </idea-plugin>
